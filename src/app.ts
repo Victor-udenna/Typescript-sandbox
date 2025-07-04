@@ -28,14 +28,15 @@ const addNewPizza = (pizzaObj: menuItem) => {
 };
 
 const placeOrder = (pizzaName: string) => {
-  const pizza = menu.find((pizza) => pizza.name === pizzaName);
-  if (!pizza) {
-    throw new Error(`Menu item "${pizzaName}" not found`);
+  const selectedPizza = menu.find((pizza) => pizza.name === pizzaName);
+  if (!selectedPizza) {
+    console.log(`Menu item "${selectedPizza}" not found`);
+    return undefined;
   }
-  cashInRegister += pizza.price;
+  cashInRegister += selectedPizza.price;
   const newOrder = {
     orderId: nextOrderId++,
-    selectedOrder: pizza,
+    selectedOrder: selectedPizza,
     status: 'ordered'
   };
   orderQueue.push(newOrder);
