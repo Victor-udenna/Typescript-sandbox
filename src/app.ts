@@ -57,8 +57,8 @@ addNewPizza({ name: 'Chicken Bacon Ranch', price: 12 });
 addNewPizza({ name: 'BBQ Chicken', price: 12 });
 addNewPizza({ name: 'Spicy Sausage', price: 11 });
 
-console.log(orderQueue, 'order');
-console.log(menu);
+// console.log(orderQueue, 'order');
+// console.log(menu);
 
-console.log(placeOrder('sushi'), cashInRegister);
-console.log(completeOrder(1), 'Completed Order');
+// console.log(placeOrder('sushi'), cashInRegister);
+// console.log(completeOrder(1), 'Completed Order');
