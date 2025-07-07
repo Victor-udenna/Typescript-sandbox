@@ -1,9 +1,9 @@
 "use strict";
 const menu = [
-    { name: 'magarita', price: 100 },
-    { name: 'pizza', price: 200 },
-    { name: 'burger', price: 300 },
-    { name: 'sushi', price: 400 }
+    { id: 1, name: 'magarita', price: 100 },
+    { id: 2, name: 'pizza', price: 200 },
+    { id: 3, name: 'burger', price: 300 },
+    { id: 4, name: 'sushi', price: 400 }
 ];
 let cashInRegister = 100;
 let nextOrderId = 1;
@@ -35,10 +35,15 @@ const completeOrder = (orderId) => {
     order.status = 'completed';
     return order;
 };
-addNewPizza({ name: 'Chicken Bacon Ranch', price: 12 });
-addNewPizza({ name: 'BBQ Chicken', price: 12 });
-addNewPizza({ name: 'Spicy Sausage', price: 11 });
-// console.log(orderQueue, 'order');
-// console.log(menu);
-// console.log(placeOrder('sushi'), cashInRegister);
-// console.log(completeOrder(1), 'Completed Order');
+addNewPizza({ id: 5, name: 'Chicken Bacon Ranch', price: 12 });
+addNewPizza({ id: 6, name: 'BBQ Chicken', price: 12 });
+addNewPizza({ id: 7, name: 'Spicy Sausage', price: 11 });
+const getPizzaDetails = (identifier) => {
+    if (typeof identifier === 'string') {
+        return menu.find((pizza) => pizza.name.toLowerCase() === identifier.toLowerCase());
+    }
+    else if (typeof identifier === 'number') {
+        return menu.find((pizza) => pizza.id === identifier);
+    }
+};
+console.log('retrieved pizza', getPizzaDetails('pizza'));
