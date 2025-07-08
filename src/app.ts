@@ -24,7 +24,7 @@ let nextOrderId = 1;
 
 let orderQueue: orderQueue = [];
 
-const addNewPizza = (pizzaObj: menuItem) => {
+const addNewPizza = (pizzaObj: menuItem): void => {
   menu.push(pizzaObj);
 };
 
@@ -44,7 +44,7 @@ const placeOrder = (pizzaName: string) => {
   return newOrder;
 };
 
-const completeOrder = (orderId: number) => {
+const completeOrder = (orderId: number): queueItem | undefined => {
   const order = orderQueue.find((order) => order.orderId === orderId);
   if (!order) {
     console.log('Order not found');
